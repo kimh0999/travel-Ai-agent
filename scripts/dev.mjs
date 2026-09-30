@@ -1,5 +1,5 @@
 // 로컬 확인용: 에뮬레이터, 백엔드(8010), 프론트(5500)를 한 번에 띄운다. Ctrl+C로 모두 종료.
-// 모의 모드(AI_MODE=mock, PLACE_PROVIDER=mock)로 실행한다.
+// AI·장소 검색 모드는 backend/.env를 따른다(없으면 모의 모드). 실제 Claude: backend/.env에 ANTHROPIC_API_KEY, AI_MODE=live
 import { spawn } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
@@ -24,8 +24,6 @@ const backendEnv = {
   FIRESTORE_EMULATOR_HOST: "127.0.0.1:8080",
   FIREBASE_AUTH_EMULATOR_HOST: "127.0.0.1:9099",
   FIREBASE_PROJECT_ID: "demo-travel",
-  AI_MODE: "mock",
-  PLACE_PROVIDER: "mock",
   CORS_ORIGINS: "http://127.0.0.1:5500",
 };
 
