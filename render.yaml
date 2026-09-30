@@ -1,0 +1,35 @@
+# Render Blueprint: 백엔드(FastAPI) 웹 서비스
+# 비밀값(sync: false)은 Render 대시보드에서 직접 입력한다.
+services:
+  - type: web
+    name: travel-assistant-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.0"
+      - key: AI_MODE
+        value: live
+      - key: PLACE_PROVIDER
+        value: kakao
+      - key: CLAUDE_MODEL
+        value: claude-opus-5-5
+      - key: CLAUDE_EFFORT
+        value: medium
+      - key: AI_TIMEOUT
+        value: "120"
+      - key: AI_MAX_RETRIES
+        value: "2"
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: KAKAO_REST_API_KEY
+        sync: false

@@ -1,0 +1,13 @@
+{
+  "name": "travel-assistant",
+  "private": true,
+  "description": "AI 여행 비서 — 에뮬레이터 실행과 프론트 빌드용 스크립트",
+  "scripts": {
+    "emulators": "firebase emulators:start --only auth,firestore --project demo-travel",
+    "test": "node scripts/test.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.32.0"
+  }
+}

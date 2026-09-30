@@ -1,0 +1,29 @@
+# 비밀값
+.env
+.env.*
+!.env.example
+*service-account*.json
+serviceAccount*.json
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+
+# 빌드 산출물 (공개 설정, 빌드 시 생성)
+frontend/config.js
+
+# Firebase
+firebase-debug.log
+firestore-debug.log
+.firebase/
+
+# 에디터/플러그인 상태
+.bkit/
+
+# 로컬 전용 도구(포터블 JDK 등)
+.tools/
